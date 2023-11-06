@@ -1,0 +1,15 @@
+{
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-undef": "warn",
+        "no-unused-vars": "error"
+    }
+}
