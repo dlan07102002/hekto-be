@@ -93,6 +93,15 @@ const includeLikedUsersCountProductAttr = () => {
     return [literal(`(SELECT COUNT(*) FROM ProductUser WHERE productId = product.id)`), "likedUsersCount"];
 };
 
+//14/11
+const wishListProducts = async (id = null) => {
+    const products = await Product.findAll({
+        where: { userId: { id } }
+    })
+
+    return products;
+}
+//
 const getFeatureProducts = async (user = null) => {
     const products = await Product.findAll({
         attributes: {
@@ -168,4 +177,5 @@ module.exports = {
     getLatestProducts,
     getTrendingProducts,
     getRelatedProducts,
+    wishListProducts
 };

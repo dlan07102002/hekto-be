@@ -73,11 +73,23 @@ const getCombineProducts = catchAsync(async (req, res) => {
         },
     });
 });
+//14/11
+const wishListProducts = catchAsync(async (req, res) => {
 
+    const wishListProducts = await productService.wishListProducts(req.id)
+
+    return res.json({
+        data: {
+            wishListProducts
+        },
+    })
+})
+//
 module.exports = {
     show,
     index,
     like,
     unlike,
     getCombineProducts,
+    wishListProducts
 };
